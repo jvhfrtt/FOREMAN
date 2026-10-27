@@ -1,0 +1,68 @@
+- insert:
+    - id: foreman
+      name: '@local/foreman'
+      config:
+        root: '<项目根>'
+        goal: '项目协作'
+        roster:
+          - id: coder
+            agentId: '28298c28-e33e-418f-8b2f-daeb962d4a1d'
+          - id: reviewer
+            agentId: 'deb514bb-d22c-4cc5-b218-b6227878002d'
+          - id: builder
+            agentId: 'a4be5f9b-2aff-40e2-b083-b21f5d38a9ad'
+          - id: nitpicker
+            agentId: 'cdab3ec7-7d4e-49c2-a0fc-d83adc9ede8d'
+          - id: archivist
+            agentId: '1c688d02-509c-4374-9ece-02693382e1f8'
+        gates:
+          gate-smoke:
+            cwd: 'L:\DSH\监工台\plugin'
+            allowOutsideRoot: true
+            testsRoot: 'test'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'test/smoke.mjs'
+            timeoutMs: 120000
+          gate-syntax:
+            cwd: 'L:\DSH\监工台\plugin'
+            allowOutsideRoot: true
+            testsRoot: 'test'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'test/gate-syntax.mjs'
+            timeoutMs: 120000
+          gate-selftest:
+            cwd: 'L:\DSH\监工台\plugin'
+            allowOutsideRoot: true
+            testsRoot: 'test'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'test/subprocess-selftest.mjs'
+            timeoutMs: 120000
+          gate-tsc:
+            cwd: '<项目根>'
+            testsRoot: 'tests'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'node_modules/typescript/bin/tsc'
+              - '--noEmit'
+            timeoutMs: 180000
+          gate-vitest:
+            cwd: '<项目根>'
+            testsRoot: 'tests'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'node_modules/vitest/vitest.mjs'
+              - 'run'
+            timeoutMs: 180000
+          gate-build:
+            cwd: '<项目根>'
+            testsRoot: 'tests'
+            artifacts:
+              - 'dist/**'
+            argv:
+              - 'C:\Users\22465\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+              - 'node_modules/vite/bin/vite.js'
+              - 'build'
+            timeoutMs: 180000

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Foreman">
+  <rect width="64" height="64" rx="14" fill="#1f2430"/>
+  <path d="M12 46h40" stroke="#f0b429" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M18 46c0-11 6.2-18.5 14-18.5S46 35 46 46" fill="none" stroke="#f0b429" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M32 27.5v-7.6" stroke="#f0b429" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="32" cy="16.4" r="3.1" fill="#f0b429"/>
+  <path d="M25.6 40.2l4.4 4.4 8.8-8.8" fill="none" stroke="#6ee7a8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

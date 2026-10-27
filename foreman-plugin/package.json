@@ -1,0 +1,31 @@
+{
+  "name": "@local/foreman",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "监工台：五席名册、任务契约、证据与裁决的看板",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "src/*.mjs",
+    "src/host/*.mjs",
+    "test/*.mjs"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}
